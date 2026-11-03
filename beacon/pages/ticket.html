@@ -1,0 +1,46 @@
+<p><a href="/tickets">← My tickets</a></p>
+<p id="loading" class="muted">Loading…</p>
+<div id="ticket" hidden>
+  <header class="ticket-head">
+    <p class="eyebrow" id="tc-number"></p>
+    <h1 id="tc-subject"></h1>
+    <p id="tc-pills" class="pill-row"></p>
+  </header>
+  <div class="grid-main">
+    <section class="stack">
+      <p id="tc-replyby" class="deadline" hidden></p>
+      <p class="muted small" id="tc-tz"></p>
+      <ol id="tc-thread" class="thread"></ol>
+      <form id="tc-reply-form" class="card" novalidate hidden>
+        <div class="field"><label for="tc-reply">Your reply</label><textarea id="tc-reply" rows="4"></textarea></div>
+        <button type="submit" class="btn">Send reply</button>
+      </form>
+      <p id="tc-msg" class="msg" role="status"></p>
+    </section>
+    <aside class="stack">
+      <section class="card">
+        <h2>Details</h2>
+        <dl class="facts" id="tc-facts"></dl>
+        <div class="actions">
+          <button type="button" id="tc-close" class="btn btn-ghost" hidden>Mark as solved</button>
+          <button type="button" id="tc-reopen" class="btn btn-ghost" hidden>Reopen</button>
+          <a id="tc-transcript" class="btn btn-ghost">Download conversation</a>
+        </div>
+      </section>
+      <form id="tc-rate-form" class="card" novalidate hidden>
+        <h2>How did we do?</h2>
+        <p id="tc-rated" class="muted"></p>
+        <fieldset class="stars"><legend class="sr-only">Rating</legend>
+          <label><input type="radio" name="tc-score" value="1"> 1</label>
+          <label><input type="radio" name="tc-score" value="2"> 2</label>
+          <label><input type="radio" name="tc-score" value="3"> 3</label>
+          <label><input type="radio" name="tc-score" value="4"> 4</label>
+          <label><input type="radio" name="tc-score" value="5"> 5</label>
+        </fieldset>
+        <p class="hint">1 = very poor, 5 = excellent.</p>
+        <button type="submit" class="btn">Send rating</button>
+        <p id="tc-rate-msg" class="msg" role="status"></p>
+      </form>
+    </aside>
+  </div>
+</div>

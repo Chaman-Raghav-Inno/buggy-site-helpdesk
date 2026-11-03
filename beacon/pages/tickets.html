@@ -1,0 +1,19 @@
+<div class="section-head"><h1>My tickets</h1><a class="btn" href="/new">New ticket</a></div>
+<div class="tabs" role="tablist" id="tk-tabs">
+  <button type="button" role="tab" data-tab="open" aria-selected="true">Open <span class="count" data-count="open"></span></button>
+  <button type="button" role="tab" data-tab="solved" aria-selected="false">Solved <span class="count" data-count="solved"></span></button>
+  <button type="button" role="tab" data-tab="closed" aria-selected="false">Closed <span class="count" data-count="closed"></span></button>
+  <button type="button" role="tab" data-tab="all" aria-selected="false">All <span class="count" data-count="all"></span></button>
+</div>
+<form id="tk-filters" class="filters card" novalidate role="search">
+  <div class="field grow"><label for="tk-q">Search</label><input id="tk-q" type="search" placeholder="Subject or ticket number"></div>
+  <div class="field"><label for="tk-sort">Sort by</label><select id="tk-sort"><option value="updated">Last updated</option><option value="newest">Newest first</option><option value="priority">Priority</option></select></div>
+</form>
+<p id="tk-count" class="muted" role="status" aria-live="polite"></p>
+<div class="table-wrap">
+  <table class="table tk-table" aria-label="Tickets">
+    <thead><tr><th>Ticket</th><th>Subject</th><th>Status</th><th>Priority</th><th>Last updated</th></tr></thead>
+    <tbody id="tk-rows"></tbody>
+  </table>
+</div>
+<nav class="pager" aria-label="Pages"><button type="button" id="tk-prev" class="btn btn-ghost btn-small">Previous</button><span id="tk-page"></span><button type="button" id="tk-next" class="btn btn-ghost btn-small">Next</button></nav>

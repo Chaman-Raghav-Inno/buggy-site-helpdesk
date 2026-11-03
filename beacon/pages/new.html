@@ -1,0 +1,33 @@
+<h1>New ticket</h1>
+<div class="grid-2">
+  <form id="nt-form" class="card" novalidate>
+    <div class="field"><label for="nt-subject">Subject</label><input id="nt-subject" maxlength="120" autocomplete="off"><p class="hint">Up to 120 characters.</p></div>
+    <div class="field-row">
+      <div class="field"><label for="nt-category">Category</label>
+        <select id="nt-category"><option value="">Choose…</option><option value="billing">Billing</option><option value="technical">Technical</option><option value="account">Account</option><option value="other">Other</option></select></div>
+      <div class="field"><label for="nt-priority">Priority</label>
+        <select id="nt-priority"><option value="low">Low</option><option value="normal" selected>Normal</option><option value="high">High</option><option value="urgent">Urgent</option></select></div>
+    </div>
+    <p class="hint gap" id="nt-plan">Urgent is for a service that's down and is part of the Premium plan.</p>
+    <div class="field"><label for="nt-description">Describe the problem</label><textarea id="nt-description" rows="6"></textarea><p class="hint">At least 20 characters. What happened, when, and what you expected.</p></div>
+    <div class="field"><label for="nt-cc">Copy in colleagues (optional)</label><input id="nt-cc" autocomplete="off" placeholder="name@yourcompany, separated by commas"><p class="hint" id="nt-cc-hint">Up to 5 colleagues at your company's email domain.</p></div>
+    <div class="field"><label for="nt-files">Attachments (optional)</label><input id="nt-files" type="file" multiple><p class="hint">Up to 5 files, 10 MB each: PNG, JPG, PDF, TXT, LOG or CSV.</p></div>
+    <ul id="nt-file-list" class="file-list"></ul>
+    <p id="nt-msg" class="msg" role="alert"></p>
+    <button type="submit" class="btn">Submit ticket</button>
+  </form>
+  <aside class="stack">
+    <section id="nt-done" class="card done" hidden>
+      <h2>Ticket created</h2>
+      <p id="nt-done-text"></p>
+      <p><a id="nt-done-link" class="btn" href="/tickets">View the ticket</a></p>
+    </section>
+    <section class="card prose">
+      <h2>Before you send</h2>
+      <ul>
+        <li>Search the <a href="/kb">help centre</a>: many answers are there.</li>
+        <li>We reply within business hours, Monday to Friday, 09:00–17:30 your time. See the <a href="/help">service policy</a> for each priority's targets.</li>
+      </ul>
+    </section>
+  </aside>
+</div>

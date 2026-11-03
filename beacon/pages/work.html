@@ -1,0 +1,81 @@
+<p><a href="/queue">← Queue</a></p>
+<p id="loading" class="muted">Loading…</p>
+<div id="work" hidden>
+  <header class="ticket-head">
+    <p class="eyebrow" id="wk-number"></p>
+    <h1 id="wk-subject"></h1>
+    <p id="wk-pills" class="pill-row"></p>
+    <p id="wk-who" class="muted"></p>
+  </header>
+  <div class="grid-main">
+    <section class="stack">
+      <p class="muted small" id="wk-tz"></p>
+      <ol id="wk-thread" class="thread"></ol>
+      <form id="wk-compose" class="card" novalidate>
+        <div class="tabs compact" role="radiogroup" aria-label="Message type">
+          <label class="check"><input type="radio" name="wk-kind" value="public" checked> Public reply</label>
+          <label class="check"><input type="radio" name="wk-kind" value="note"> Internal note</label>
+        </div>
+        <div class="field"><label for="wk-canned">Canned reply</label><select id="wk-canned"><option value="">Insert a canned reply…</option></select></div>
+        <div class="field"><label for="wk-body">Message</label><textarea id="wk-body" rows="6"></textarea></div>
+        <div class="field" id="wk-after-field"><label for="wk-after">Then set the ticket to</label>
+          <select id="wk-after"><option value="pending">Waiting on customer</option><option value="open">Open</option><option value="solved">Solved</option></select></div>
+        <button type="submit" class="btn" id="wk-send">Send reply</button>
+        <p id="wk-compose-msg" class="msg" role="status"></p>
+      </form>
+    </section>
+    <aside class="stack">
+      <form id="wk-props" class="card" novalidate>
+        <h2>Ticket</h2>
+        <div class="field"><label for="wk-status">Status</label><select id="wk-status"></select></div>
+        <div class="field"><label for="wk-priority">Priority</label>
+          <select id="wk-priority"><option value="urgent">Urgent</option><option value="high">High</option><option value="normal">Normal</option><option value="low">Low</option></select></div>
+        <div class="field"><label for="wk-assignee">Agent</label><select id="wk-assignee"></select></div>
+        <button type="submit" class="btn">Save</button>
+        <p id="wk-props-msg" class="msg" role="status"></p>
+      </form>
+      <section class="card">
+        <h2>SLA</h2>
+        <dl class="facts" id="wk-sla"></dl>
+      </section>
+      <section class="card">
+        <h2>Tags</h2>
+        <ul id="wk-tags" class="pills"></ul>
+        <form id="wk-tag-form" class="row" novalidate>
+          <label for="wk-tag" class="sr-only">New tag</label><input id="wk-tag" autocomplete="off" placeholder="add a tag">
+          <button type="submit" class="btn btn-small">Add</button>
+        </form>
+        <p id="wk-tag-msg" class="msg" role="status"></p>
+      </section>
+      <section class="card">
+        <h2>More</h2>
+        <div class="actions"><button type="button" id="wk-escalate" class="btn btn-ghost">Escalate to Tier 2</button></div>
+        <form id="wk-merge-form" class="field" novalidate>
+          <label for="wk-merge">Merge this ticket into</label>
+          <div class="row"><input id="wk-merge" autocomplete="off" placeholder="#1234" inputmode="numeric"><button type="submit" class="btn btn-small">Merge</button></div>
+        </form>
+        <p id="wk-more-msg" class="msg" role="status"></p>
+      </section>
+    </aside>
+  </div>
+</div>
+<dialog id="wk-esc-dialog" aria-labelledby="wk-esc-title">
+  <form method="dialog" novalidate>
+    <h2 id="wk-esc-title">Escalate to Tier 2</h2>
+    <div class="field"><label for="wk-esc-reason">Why does this need Tier 2?</label><textarea id="wk-esc-reason" rows="3" maxlength="500"></textarea></div>
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-ghost" data-value="back">Back</button>
+      <button type="button" class="btn" data-value="escalate">Escalate</button>
+    </div>
+  </form>
+</dialog>
+<dialog id="wk-merge-dialog" aria-labelledby="wk-merge-title">
+  <form method="dialog" novalidate>
+    <h2 id="wk-merge-title">Merge tickets</h2>
+    <p id="wk-merge-text"></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-ghost" data-value="back">Back</button>
+      <button type="button" class="btn btn-danger" data-value="merge">Merge</button>
+    </div>
+  </form>
+</dialog>

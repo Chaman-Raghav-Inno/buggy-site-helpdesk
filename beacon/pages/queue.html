@@ -1,0 +1,28 @@
+<div class="section-head"><h1>Queue</h1><p class="muted" id="qu-clock"></p></div>
+<div class="tabs" role="tablist" id="qu-tabs">
+  <button type="button" role="tab" data-view="open" aria-selected="true">All open <span class="count" data-count="open"></span></button>
+  <button type="button" role="tab" data-view="unassigned" aria-selected="false">Unassigned <span class="count" data-count="unassigned"></span></button>
+  <button type="button" role="tab" data-view="mine" aria-selected="false">Mine <span class="count" data-count="mine"></span></button>
+  <button type="button" role="tab" data-view="overdue" aria-selected="false">Overdue <span class="count" data-count="overdue"></span></button>
+  <button type="button" role="tab" data-view="priority" aria-selected="false">Urgent and High <span class="count" data-count="priority"></span></button>
+</div>
+<form id="qu-bulk" class="filters card" novalidate>
+  <p class="bulk-count" id="qu-selected">0 selected</p>
+  <div class="field"><label for="qu-action">Bulk action</label>
+    <select id="qu-action">
+      <option value="assign_me">Assign to me</option>
+      <option value="status:open">Set status: Open</option>
+      <option value="status:pending">Set status: Waiting on customer</option>
+      <option value="status:solved">Set status: Solved</option>
+      <option value="tag">Add a tag</option>
+    </select></div>
+  <div class="field" id="qu-tag-field" hidden><label for="qu-tag">Tag</label><input id="qu-tag" autocomplete="off" placeholder="e.g. billing"></div>
+  <button type="submit" class="btn">Apply</button>
+</form>
+<p id="qu-msg" class="msg" role="status"></p>
+<div class="table-wrap">
+  <table class="table qu-table" aria-label="Tickets">
+    <thead><tr><th><input type="checkbox" id="qu-all" aria-label="Select all"></th><th>Ticket</th><th>Subject</th><th>Priority</th><th>Status</th><th>Agent</th><th>First response</th><th>Resolution</th></tr></thead>
+    <tbody id="qu-rows"></tbody>
+  </table>
+</div>

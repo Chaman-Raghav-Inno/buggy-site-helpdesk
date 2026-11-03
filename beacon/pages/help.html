@@ -1,0 +1,79 @@
+<h1>Service policy</h1>
+<p class="muted">How Beacon Support handles your tickets: response times, business hours and who can see what.</p>
+<div class="grid-2">
+  <section class="card prose">
+    <h2>Response times</h2>
+    <p>Targets are counted in <strong>business hours</strong> from the moment a ticket is raised.</p>
+    <div class="table-wrap">
+      <table class="table" aria-label="Response time targets">
+        <thead><tr><th>Priority</th><th>First response</th><th>Resolution</th></tr></thead>
+        <tbody>
+          <tr><td>Urgent</td><td>1 hour</td><td>8 hours</td></tr>
+          <tr><td>High</td><td>2 hours</td><td>16 hours</td></tr>
+          <tr><td>Normal</td><td>8 hours</td><td>40 hours</td></tr>
+          <tr><td>Low</td><td>16 hours</td><td>80 hours</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2>Business hours</h2>
+    <ul>
+      <li>Monday to Friday, 09:00 to 17:30 in your company's time zone (Northwind Traders: Dubai, UTC+4; Halcyon Foods: Singapore, UTC+8). Weekends don't count.</li>
+      <li>Public holidays don't count either. The desk observes: <span id="hp-holidays">New Year's Day and Founders' Day</span>.</li>
+      <li>Times on Beacon are shown in the requester's company time zone.</li>
+    </ul>
+    <h2>How the clocks run</h2>
+    <ul>
+      <li>The first-response clock stops at the first <strong>public reply</strong> from an agent. Internal notes don't count as a response.</li>
+      <li>The resolution clock runs until the ticket is solved. It pauses while the ticket is <em>Waiting on customer</em>; when you reply, the ticket goes back to <em>Open</em> and the clock restarts.</li>
+      <li>If a ticket's priority changes, the new priority's targets apply, counted from when the ticket was raised.</li>
+    </ul>
+    <h2>Raising a ticket</h2>
+    <ul>
+      <li>Every plan can choose Low, Normal or High. <strong>Urgent</strong> (for a service that's down) is part of the Premium plan; on the Standard plan our agents can raise a ticket to Urgent for you.</li>
+      <li>Subjects can be up to 120 characters; describe the problem in at least 20.</li>
+      <li>Attach up to 5 files of up to 10 MB each: PNG, JPG, PDF, TXT, LOG or CSV, whatever the case of the file name (<code>screenshot.PNG</code> is fine).</li>
+      <li>Copy in up to 5 colleagues. Copies can only go to addresses at your company's own email domain (for Northwind Traders, <code>@northwind.test</code>).</li>
+    </ul>
+  </section>
+  <section class="card prose">
+    <h2>Your tickets</h2>
+    <ul>
+      <li>Search finds tickets by subject or by number, with or without the # (<code>1022</code> or <code>#1022</code>).</li>
+      <li>"Priority" sorting lists the most urgent first: Urgent, High, Normal, Low. Lists show 5 tickets a page.</li>
+      <li>You can reopen a solved ticket within 7 days of it being solved. After 7 days it closes for good.</li>
+      <li>Closed tickets can't be replied to or reopened: raise a new ticket and mention the old number.</li>
+      <li>Once a ticket is solved, the person who raised it can rate it from 1 to 5 stars, once. Ratings can't be changed.</li>
+      <li>You can download a ticket's conversation as a text file.</li>
+    </ul>
+    <h2>Privacy</h2>
+    <ul>
+      <li>You see the tickets you raised. Your company's admins also see, and can reply to, every ticket their colleagues raise; only the person who raised a ticket can solve, reopen or rate it.</li>
+      <li>Nobody ever sees another company's tickets.</li>
+      <li>Agents' internal notes are never shown to customers: not on the ticket, not in emails and not in downloads.</li>
+      <li>"Solved this month" on the company page counts tickets solved since the 1st of this month.</li>
+    </ul>
+    <h2>Help centre</h2>
+    <ul>
+      <li>Search looks in article titles and article text.</li>
+      <li>Each person can vote once per article. The helpful score is the share of all votes that said "Yes".</li>
+    </ul>
+    <h2>For our support team</h2>
+    <ul>
+      <li>Queue views: <em>Unassigned</em> shows unsolved tickets (New, Open or Waiting) with no agent; <em>Overdue</em> shows unsolved tickets that have passed their first-response target without a public reply, or their resolution target.</li>
+      <li>Agents who are away can't be given tickets. A ticket can only be solved once the customer has had at least one public reply.</li>
+      <li>Escalating to Tier 2 needs a reason, adds the <code>tier-2</code> tag and makes the priority at least High: Urgent tickets stay Urgent.</li>
+      <li>Tickets can have up to 5 tags (lowercase letters, numbers and hyphens).</li>
+      <li>Merging closes the duplicate and moves all of its messages into the ticket you keep. Only tickets from the same company can be merged, never into themselves or into a closed ticket.</li>
+      <li>Canned replies fill in <code>{{first_name}}</code> (the customer's first name), <code>{{ticket_id}}</code> (e.g. #1022) and <code>{{agent_name}}</code> (your first name), everywhere they appear.</li>
+      <li>Bulk actions only change the tickets you tick in the current view.</li>
+    </ul>
+    <h2>Reports</h2>
+    <ul>
+      <li>Reports cover tickets raised in the last 30 days; days run midnight to midnight Dubai time. "Tickets per day" shows the last 7 days, today included.</li>
+      <li>Average first response is the mean business time to the first public reply, over the tickets that have had one.</li>
+      <li>SLA breach rate = tickets that missed either target ÷ all tickets in the period.</li>
+      <li>CSAT = ratings of 4 or 5 stars ÷ all ratings.</li>
+      <li>The CSV download has one row per ticket and opens cleanly in a spreadsheet.</li>
+    </ul>
+  </section>
+</div>

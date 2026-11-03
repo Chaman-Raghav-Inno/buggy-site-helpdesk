@@ -1,0 +1,27 @@
+<div class="section-head"><h1>Reports</h1><a id="rp-csv" class="btn btn-ghost" href="/api/reports.csv" download="beacon-tickets.csv">Download CSV</a></div>
+<p class="muted" id="rp-period"></p>
+<div class="tiles">
+  <div class="tile"><p class="tile-label">Tickets</p><p class="tile-value" id="rp-count">–</p></div>
+  <div class="tile"><p class="tile-label">Average first response</p><p class="tile-value" id="rp-first">–</p><p class="tile-note">Business hours</p></div>
+  <div class="tile"><p class="tile-label">SLA breach rate</p><p class="tile-value" id="rp-breach">–</p><p class="tile-note" id="rp-breach-note"></p></div>
+  <div class="tile"><p class="tile-label">CSAT</p><p class="tile-value" id="rp-csat">–</p><p class="tile-note" id="rp-csat-note"></p></div>
+</div>
+<div class="grid-2">
+  <section class="card">
+    <h2>Tickets per day</h2>
+    <ul id="rp-days" class="bars"></ul>
+  </section>
+  <section class="card">
+    <h2>Ratings</h2>
+    <ul id="rp-ratings" class="bars"></ul>
+  </section>
+</div>
+<section class="section">
+  <h2>Tickets in this period</h2>
+  <div class="table-wrap">
+    <table class="table" aria-label="Tickets in this period">
+      <thead><tr><th>Ticket</th><th>Subject</th><th>Company</th><th>Priority</th><th>Status</th><th>Raised</th><th class="num">First response</th><th>SLA</th><th>Rating</th></tr></thead>
+      <tbody id="rp-rows"></tbody>
+    </table>
+  </div>
+</section>

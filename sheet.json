@@ -1,0 +1,37 @@
+{
+  "title": "Beacon Support",
+  "repo_url": "https://github.com/Chaman-Raghav-Inno/buggy-site-helpdesk",
+  "code_folder": "beacon/",
+  "logins_line": "Logins (password Beacon@2026): ivy@beacon.test customer and company admin · sam@beacon.test support agent (same browser = same data).",
+  "default_login": "Ivy (customer)",
+  "logins": {
+    "18": "Anyone", "19": "Anyone", "20": "Anyone",
+    "21": "Sam (agent)", "22": "Sam (agent)", "23": "Sam (agent)", "24": "Sam (agent)", "25": "Sam (agent)",
+    "26": "Sam (agent)", "27": "Sam (agent)", "28": "Sam (agent)", "29": "Sam (agent)", "30": "Sam (agent)",
+    "31": "Sam (agent)", "32": "Sam (agent)", "33": "Sam (agent)", "34": "Sam, then Ivy", "35": "Sam (agent)",
+    "36": "Sam (agent)", "37": "Sam (agent)", "38": "Sam (agent)", "39": "Sam (agent)"
+  },
+  "start_pages": {
+    "1": "/new", "2": "/new", "3": "/new", "4": "/new", "5": "/new",
+    "6": "/tickets", "7": "/tickets", "8": "/tickets",
+    "9": "/ticket?id=1002", "10": "/ticket?id=1004", "11": "/ticket?id=1018", "12": "/ticket?id=1004",
+    "13": "/ticket?id=1022", "14": "/ticket?id=1022", "15": "/ticket?id=1021",
+    "16": "/ticket?id=1009", "17": "/company",
+    "18": "/kb", "19": "/article?id=2", "20": "/article?id=2",
+    "21": "/queue", "22": "/queue", "23": "/queue",
+    "24": "/work?id=1017", "25": "/work?id=1011", "26": "/work?id=1020", "27": "/work?id=1014",
+    "28": "/work?id=1022", "29": "/work?id=1023", "30": "/work?id=1024", "31": "/work?id=1021",
+    "32": "/work?id=1022", "33": "/work?id=1024", "34": "/work?id=1025",
+    "35": "/reports", "36": "/reports", "37": "/reports", "38": "/reports", "39": "/reports",
+    "40": "/ticket?id=9999"
+  },
+  "what_it_is": "A demo customer-support helpdesk (customer portal, company tickets, help centre, agent queue with SLA timers in business hours, canned replies, merging, escalation and reports) with 40 functional bugs planted on purpose. Nothing on the site names or hints at a bug; the rules are published on /help.",
+  "logins_about": "Password Beacon@2026: ivy@beacon.test (Ivy Marsh, customer and company admin at Northwind Traders, Standard plan) · sam@beacon.test (Sam Okafor, support agent and team lead). Logging in as both in one browser shares the data.",
+  "example": "BUG-13 · Found by scanner? = Yes · notes = \"Downloaded conversation of #1022 shows Sam's internal note\" · Scan ID = 902",
+  "not_planted": [
+    ["Console errors", "401 on wrong passwords, 404 and a JavaScript error on an unknown ticket (BUG-40), 409 when a reopen or rating is refused, 403 on agent pages as Ivy and customer pages as Sam."],
+    ["Combined effects", "The SLA bugs (BUG-24 to BUG-27) also change the queue's Breached labels, the Overdue view and the report's breach rate; BUG-12 and BUG-16 change CSAT."],
+    ["Fixed demo clock", "The desk clock is 12:00 Dubai time on the session's first day and doesn't move; open tickets' SLA minutes depend on the weekday."],
+    ["Date caveat", "BUG-17 can't show on the 31st of a month."]
+  ]
+}
